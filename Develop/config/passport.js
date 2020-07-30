@@ -1,6 +1,9 @@
+// Include the Passport middlewear for authentication
 var passport = require("passport");
+// Use the Local Strategy for authentication
 var LocalStrategy = require("passport-local").Strategy;
 
+// Import db - our Sequelize ORM instance for managing our db
 var db = require("../models");
 
 // Telling passport we want to use a Local Strategy. In other words, we want login with a username/email and password

@@ -29,6 +29,8 @@ $(document).ready(function() {
       password: password
     })
       .then(function() {
+        // If there was a successful login, we redirect
+        // to the members route
         window.location.replace("/members");
         // If there's an error, log the error
       })
