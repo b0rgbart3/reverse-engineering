@@ -7,10 +7,10 @@ This is a demo of using the npm package 'Passport' to add authentication to any 
 2. [Live Demo](#Live_Demo)
 3. [Code Base](#Code_Base)
 4. [Features](#Features)
-5. [Technology](#Technology)
+5. [Technologies](#Technologies)
 6. [Business Context](#Business_Context)
 7. [Credits](#Credits)
-8. [License](#License)
+
 
 <a name="User_Story"></a>
 ## User Story
@@ -23,25 +23,13 @@ SO THAT I can use it as a starting point for a new project
 ```
 
 <a name="Live_Demo"></a>
+## Live Demo
+
 [![IMAGE ALT TEXT HERE](demo.jpg)](https://www.youtube.com/embed/6SFcKODuEXs)
 
 
 
-<a name="Features"></a>
-## Features
-1)  Basic User Authentication
-2)  Includes email address, password
-3)  Passes user object in the request object
-
-## Technology
-1) Node.js
-2) Passport
-3) Express 
-4) Express-Session
-5) mysql
-6) Sequelize
-7) bcrypt
-
+<a name="Code_Base"></a>
 ## Code Base
 
 ### Server.js
@@ -84,11 +72,44 @@ We add our html and api routes as external files to the server.  Finally, we tel
 #### Models/user.js
 - This is the model for the User data that we store in the database.  There are basically just two fields, email address and password.  Here we create a couple of extra helper methods. We add a "Hook" method that will execute before the user data gets stored as a record in the database.  It uses the npm package 'Bcrypt' to create a hash using the users password and a salt value of 10 so that we can store a hash string in the database instead of the actual password string.  We have another helper method "ValidatePassword" which again uses bcrypt to compare the password the user enters in the login form against the hash we have stored in our database to see if they match.  If they do it will pass the user object along the request.
 
+### Public/js
+#### Public/js/signup.js
+This is client side javascript that takes the data that the user enters into the form input fields and creates a ajax put request to send that data to our server's /api/signup route.
+
+#### Public/js/login.js
+This is client side javascript that takes the data that the user enters into the form input fields and creates a ajax put request to send that data to our server's /api/login route.
+
+### Routes
+#### Routes/api-routes.js
+Here we handle all of our api routes, including the post requests to api/login and api/signup.  api/login uses passport to authenticate the user, and api/signup uses Sequelize to add a new User Object to our database.
+
+#### Routes/html-routes.js
+Here we handle all of the user-facing public html routes - checking the request object to see if we have a user object, which means the user has logged in.  If they are logged in, they get redirected to the members page, otherwise they get sent back to the root route.
+
+
+
+<a name="Features"></a>
+## Features
+1)  Basic User Authentication
+2)  Includes email address, password
+3)  Passes user object in the request object
+
+<a name="Technologies"></a>
+## Technologies
+1) Node.js
+2) Passport
+3) Express 
+4) Express-Session
+5) mysql
+6) Sequelize
+7) bcrypt
+
+
 <a name="Business_Context"></a>
 ## Business Context
 When joining a new team, you will be expected to inspect a lot of code that you have never seen before. Rather than having a team member explain every line for you, you will dissect the code by yourself, saving any questions for a member of your team.
 
-
+<a name="Acceptance_Criteria"></a>
 ## Acceptance Critera
 ```md
 GIVEN a Node.js application using Sequelize and Passport
@@ -96,6 +117,7 @@ WHEN I follow the walkthrough
 THEN I understand the codebase
 ```
 
+<a name="Credits"></a>
 
 **on github:** <a href='github.com/b0rgBart3'>b0rgBart3</a>
 
