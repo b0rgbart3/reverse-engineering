@@ -5,11 +5,12 @@ This is a demo of using the npm package 'Passport' to add authentication to any 
 # Table of contents
 1. [User Story](#User_Story)
 2. [Live Demo](#Live_Demo)
-3. [Code Base](#Code_Base)
-4. [Features](#Features)
-5. [Technologies](#Technologies)
-6. [Business Context](#Business_Context)
-7. [Credits](#Credits)
+3. [Diagram](#Diagram)
+4. [Code Base](#Code_Base)
+5. [Features](#Features)
+6. [Technologies](#Technologies)
+7. [Business Context](#Business_Context)
+8. [Credits](#Credits)
 
 
 <a name="User_Story"></a>
@@ -25,9 +26,11 @@ SO THAT I can use it as a starting point for a new project
 <a name="Live_Demo"></a>
 ## Live Demo
 
-[![IMAGE ALT TEXT HERE](demo.jpg)](https://www.youtube.com/embed/6SFcKODuEXs)
+[![CODE WALK THRU VIDEO](demo.jpg)](https://www.youtube.com/embed/6SFcKODuEXs)
 
-
+<a name="Diagram"></a>
+### Pasport middlewear diagram:
+![PASSPORT MIDDLEWEAR DIAGRAM](middlewear.jpg)
 
 <a name="Code_Base"></a>
 ## Code Base
