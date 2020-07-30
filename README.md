@@ -1,30 +1,20 @@
-# Passport: a demo 
+# Passport Demo: a walk-thru of the code 
 Sequelize Homework: Reverse Engineering Code
 This is a demo of using the npm package 'Passport' to add authentication to any website
 
 # Table of contents
-1. [User Story](#User_Story)
-2. [Live Demo](#Live_Demo)
-3. [Diagram](#Diagram)
-4. [Code Base](#Code_Base)
+1. [Video Walk Thru of the Code base](#Video)
+2. [Middlewear Diagram](#Diagram)
+3. [Written notes on the Code Base](#Code_Base)
+4. [User Story](#User_Story)
 5. [Features](#Features)
 6. [Technologies](#Technologies)
 7. [Business Context](#Business_Context)
 8. [Credits](#Credits)
 
 
-<a name="User_Story"></a>
-## User Story
-```
-AS A developer
-
-I WANT a walk-through of the codebase
-
-SO THAT I can use it as a starting point for a new project
-```
-
-<a name="Live_Demo"></a>
-## Live Demo
+<a name="Video"></a>
+## Video walk-thru of the code base
 
 [![CODE WALK THRU VIDEO](demo.jpg)](https://www.youtube.com/embed/6SFcKODuEXs)
 
@@ -89,6 +79,16 @@ Here we handle all of our api routes, including the post requests to api/login a
 #### Routes/html-routes.js
 Here we handle all of the user-facing public html routes - checking the request object to see if we have a user object, which means the user has logged in.  If they are logged in, they get redirected to the members page, otherwise they get sent back to the root route.
 
+
+<a name="User_Story"></a>
+## User Story
+```
+AS A developer
+
+I WANT a walk-through of the codebase
+
+SO THAT I can use it as a starting point for a new project
+```
 
 
 <a name="Features"></a>
