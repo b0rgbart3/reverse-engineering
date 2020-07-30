@@ -23,7 +23,8 @@ SO THAT I can use it as a starting point for a new project
 ```
 
 <a name="Live_Demo"></a>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/6SFcKODuEXs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![IMAGE ALT TEXT HERE](demo.jpg)](https://www.youtube.com/embed/6SFcKODuEXs)
+
 
 
 <a name="Features"></a>
