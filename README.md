@@ -1,8 +1,18 @@
-# Passport: a demo of Passport
+# Passport: a demo 
 Sequelize Homework: Reverse Engineering Code
 This is a demo of using the npm package 'Passport' to add authentication to any website
 
+# Table of contents
+1. [User Story](#User_Story)
+2. [Live Demo](#Live_Demo)
+3. [Code Base](#Code_Base)
+4. [Features](#Features)
+5. [Technology](#Technology)
+6. [Business Context](#Business_Context)
+7. [Credits](#Credits)
+8. [License](#License)
 
+<a name="User_Story"></a>
 ## User Story
 ```
 AS A developer
@@ -12,8 +22,24 @@ I WANT a walk-through of the codebase
 SO THAT I can use it as a starting point for a new project
 ```
 
-## Business Context
-When joining a new team, you will be expected to inspect a lot of code that you have never seen before. Rather than having a team member explain every line for you, you will dissect the code by yourself, saving any questions for a member of your team.
+<a name="Live_Demo"></a>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6SFcKODuEXs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+<a name="Features"></a>
+## Features
+1)  Basic User Authentication
+2)  Includes email address, password
+3)  Passes user object in the request object
+
+## Technology
+1) Node.js
+2) Passport
+3) Express 
+4) Express-Session
+5) mysql
+6) Sequelize
+7) bcrypt
 
 ## Code Base
 
@@ -43,6 +69,24 @@ We add our html and api routes as external files to the server.  Finally, we tel
 -Depends On: /models
 -Exports: passport
 
+### Config/config.json
+- Includes 3 objects of DB credentials for the 3 different environments
+
+### Config/middleware/isAuthenticated.js
+- middlwear that checks to see if the user object exists on the request object, so we know if the user has logged in or not.
+
+### Models
+#### Models/index.js
+
+- Here we create our Sequelize instance - which is our DB ORM.  We use the Node file system methods to get all the names of the js files in the models folder and create an associated Sequelize databse model with each of those files.  In this case we only have one other file in this folder, which is called User.js
+
+#### Models/user.js
+- This is the model for the User data that we store in the database.  There are basically just two fields, email address and password.  Here we create a couple of extra helper methods. We add a "Hook" method that will execute before the user data gets stored as a record in the database.  It uses the npm package 'Bcrypt' to create a hash using the users password and a salt value of 10 so that we can store a hash string in the database instead of the actual password string.  We have another helper method "ValidatePassword" which again uses bcrypt to compare the password the user enters in the login form against the hash we have stored in our database to see if they match.  If they do it will pass the user object along the request.
+
+<a name="Business_Context"></a>
+## Business Context
+When joining a new team, you will be expected to inspect a lot of code that you have never seen before. Rather than having a team member explain every line for you, you will dissect the code by yourself, saving any questions for a member of your team.
+
 
 ## Acceptance Critera
 ```md
@@ -50,3 +94,10 @@ GIVEN a Node.js application using Sequelize and Passport
 WHEN I follow the walkthrough
 THEN I understand the codebase
 ```
+
+
+**on github:** <a href='github.com/b0rgBart3'>b0rgBart3</a>
+
+[![](https://github.com/b0rgBart3.png?size=90)](https://github.com/remarkablemark)
+
+Email: borgBart3@gmail.com
